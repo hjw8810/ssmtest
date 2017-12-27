@@ -1,5 +1,7 @@
 package com.cn.hnust.dao;
 
+import java.util.List;
+
 import com.cn.hnust.model.UserInfo;
 
 public interface UserInfoDao {
@@ -14,4 +16,6 @@ public interface UserInfoDao {
     int updateByPrimaryKeySelective(UserInfo record);
 
     int updateByPrimaryKey(UserInfo record);
+
+	List<UserInfo> getAllUserInfo();
 }

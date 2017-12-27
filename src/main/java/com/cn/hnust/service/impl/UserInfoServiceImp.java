@@ -1,5 +1,7 @@
 package com.cn.hnust.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -30,6 +32,12 @@ public class UserInfoServiceImp implements UserInfoService {
 		// TODO Auto-generated method stub
 		return this.uinfoDao.insertSelective(record);
 
+	}
+
+	@Override
+	public List<UserInfo> getAllUsrInfo() {
+		// TODO Auto-generated method stub
+		return this.uinfoDao.getAllUserInfo();
 	}
 
 }

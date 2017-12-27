@@ -24,7 +24,6 @@ public class TestableController {
 	public Model tableAll(Model model) {
 		List<Testable> tableList = testableService.getTableAll();
 		if (!tableList.isEmpty()) {
-			System.out.println(tableList.size());
 			model.addAttribute("countTable", tableList.size());
 			model.addAttribute("testbale", tableList);
 			return model;

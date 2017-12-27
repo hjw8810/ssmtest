@@ -1,6 +1,7 @@
 package com.cn.hnust.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cn.hnust.model.Testable;
 import com.cn.hnust.model.UserInfo;
 import com.cn.hnust.service.UserInfoService;
 
@@ -66,5 +68,19 @@ public class FormController {
 			return model;
 		}
 		
+	}
+	
+	//获取所有用户
+	@ResponseBody
+	@RequestMapping("/getAllUserInfo")
+	public Model getAllUserInfo(Model model) {
+		List<UserInfo> userInfoList = userInfoService.getAllUsrInfo();
+		if(!userInfoList.isEmpty()) {
+			model.addAttribute("userInfoList", userInfoList);
+			return model;
+		}else {
+			model.addAttribute("msg", "null");
+			return model;
+		}
 	}
 }

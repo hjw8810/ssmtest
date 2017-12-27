@@ -149,4 +149,9 @@
       power = #{power,jdbcType=INTEGER}
     where infoid = #{infoid,jdbcType=INTEGER}
   </update>
+  <select id="getAllUserInfo" resultMap="BaseResultMap">
+  select 
+    <include refid="Base_Column_List" />
+    from userinfo
+  </select>
 </mapper>
